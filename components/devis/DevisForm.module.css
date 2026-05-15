@@ -1,0 +1,791 @@
+/* .wrapper {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(0, 212, 255, 0.10), transparent 28%),
+    radial-gradient(circle at top right, rgba(10, 42, 74, 0.07), transparent 30%),
+    linear-gradient(180deg, #f6f9fc 0%, #edf3f9 100%);
+  padding: 72px 20px;
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #0a2239;
+  font-weight: 800;
+}
+
+.subtitle {
+  margin: 16px auto 0;
+  max-width: 760px;
+  color: #5a6b7d;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.form {
+  position: relative;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(10, 42, 74, 0.08);
+  border-radius: 28px;
+  padding: 34px;
+  box-shadow:
+    0 10px 30px rgba(10, 42, 74, 0.05),
+    0 30px 80px rgba(10, 42, 74, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0) 22%
+  );
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 20px;
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #17324d;
+  letter-spacing: 0.01em;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 90%;
+  border: 1px solid rgba(10, 42, 74, 0.10);
+  border-radius: 18px;
+  padding: 15px 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  background: #fcfdff;
+  color: #122335;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.15s ease;
+  font-family: inherit;
+  appearance: none;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #8a97a6;
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: rgba(10, 42, 74, 0.18);
+  background: #ffffff;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #0f4f8a;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 4px rgba(15, 79, 138, 0.10),
+    0 8px 24px rgba(15, 79, 138, 0.08);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.featureGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.featureTag {
+  border: 1px solid rgba(10, 42, 74, 0.10);
+  background: linear-gradient(180deg, #ffffff 0%, #f5f8fc 100%);
+  color: #17324d;
+  border-radius: 999px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    transform 0.15s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.featureTag:hover {
+  transform: translateY(-1px);
+  border-color: rgba(15, 79, 138, 0.28);
+  box-shadow: 0 8px 18px rgba(10, 42, 74, 0.08);
+}
+
+.featureTagActive {
+  background: linear-gradient(135deg, #0a2a4a 0%, #0f4f8a 100%);
+  color: #ffffff;
+  border-color: #0f4f8a;
+  box-shadow: 0 10px 22px rgba(10, 42, 74, 0.18);
+}
+
+.checkboxGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 8px 0 24px;
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(180deg, #fbfdff 0%, #f4f8fc 100%);
+  border: 1px solid rgba(10, 42, 74, 0.08);
+  border-radius: 16px;
+  padding: 15px 16px;
+  color: #17324d;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+.checkboxItem:hover {
+  transform: translateY(-1px);
+  border-color: rgba(15, 79, 138, 0.20);
+  box-shadow: 0 10px 22px rgba(10, 42, 74, 0.06);
+}
+
+.checkboxItem input {
+  width: 18px;
+  height: 18px;
+  accent-color: #0f4f8a;
+  flex-shrink: 0;
+}
+
+.error {
+  margin: 8px 0 20px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #fff5f5 0%, #fff1f1 100%);
+  color: #b42318;
+  border: 1px solid #f3c7cb;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.submitButton {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  padding: 17px 20px;
+  background: linear-gradient(135deg, #0a2a4a 0%, #0f4f8a 55%, #1274c2 100%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 16px 32px rgba(10, 42, 74, 0.18);
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 36px rgba(10, 42, 74, 0.22);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (max-width: 992px) {
+  .form {
+    padding: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 48px 16px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .form {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .grid,
+  .checkboxGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px;
+  }
+
+  .submitButton {
+    padding: 16px 18px;
+  }
+}
+
+.optionSections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.optionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.optionTitle {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: #0a2239;
+  letter-spacing: -0.01em;
+}
+
+.optionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.optionCard {
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgba(10, 42, 74, 0.10);
+  background: linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
+  border-radius: 18px;
+  padding: 16px 18px;
+  cursor: pointer;
+  color: #17324d;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease,
+    background 0.2s ease;
+}
+
+.optionCard:hover {
+  transform: translateY(-1px);
+  border-color: rgba(15, 79, 138, 0.20);
+  box-shadow: 0 12px 24px rgba(10, 42, 74, 0.07);
+}
+
+.optionCardActive {
+  background: linear-gradient(135deg, #0a2a4a 0%, #0f4f8a 100%);
+  border-color: #0f4f8a;
+  color: #ffffff;
+  box-shadow: 0 16px 28px rgba(10, 42, 74, 0.16);
+}
+
+.optionCardLabel {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .optionGrid {
+    grid-template-columns: 1fr;
+  }
+} */
+
+
+/* ── Wrapper ── */
+.wrapper {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(42, 166, 255, 0.12) 0%, transparent 40%),
+    radial-gradient(ellipse at 90% 100%, rgba(124, 92, 255, 0.1) 0%, transparent 40%),
+    linear-gradient(180deg, #060e1c 0%, #0a1628 60%, #0d1e36 100%);
+  padding: 80px 24px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* ── Container ── */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.headerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(42, 166, 255, 0.12);
+  border: 1px solid rgba(42, 166, 255, 0.25);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #2AA6FF;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.headerBadge i {
+  font-size: 14px;
+}
+
+.title {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(42, 166, 255, 0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  margin: 0 auto;
+  max-width: 600px;
+  color: rgba(232, 237, 244, 0.55);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* ── Steps indicator ── */
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 44px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.3);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stepNum {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255,255,255,0.04);
+  transition: all 0.3s ease;
+}
+
+.stepActive .stepNum {
+  background: #2AA6FF;
+  border-color: #2AA6FF;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(42,166,255,0.4);
+}
+
+.stepActive {
+  color: rgba(255,255,255,0.85);
+}
+
+.stepLine {
+  width: 48px;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 0 4px;
+}
+
+/* ── Form card ── */
+.form {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 44px 48px;
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+}
+
+.form::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(42, 166, 255, 0.4), transparent);
+  border-radius: 28px 28px 0 0;
+  pointer-events: none;
+}
+
+/* ── Section dividers inside form ── */
+.formSection {
+  margin-bottom: 36px;
+}
+
+.formSectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(42, 166, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.formSectionTitle i {
+  font-size: 16px;
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* ── Fields ── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.01em;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 13px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+  outline: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+  font-family: inherit;
+  appearance: none;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.22);
+}
+
+.field select option {
+  background: #0d1e36;
+  color: rgba(255,255,255,0.85);
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: rgba(42, 166, 255, 0.25);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: rgba(42, 166, 255, 0.6);
+  background: rgba(42, 166, 255, 0.06);
+  box-shadow:
+    0 0 0 3px rgba(42, 166, 255, 0.12),
+    0 8px 24px rgba(42, 166, 255, 0.08);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* ── Option sections (feature toggles) ── */
+.optionSections {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.optionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.optionTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.optionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.optionCard {
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 13px 16px;
+  cursor: pointer;
+  color: rgba(255,255,255,0.65);
+  font-family: inherit;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.optionCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(42, 166, 255, 0.3);
+  background: rgba(42, 166, 255, 0.07);
+  color: rgba(255,255,255,0.85);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.optionCardActive {
+  background: linear-gradient(135deg, rgba(42,166,255,0.25) 0%, rgba(21,101,192,0.3) 100%);
+  border-color: rgba(42, 166, 255, 0.6);
+  color: #ffffff;
+  box-shadow:
+    0 8px 24px rgba(42, 166, 255, 0.2),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.optionCardActive:hover {
+  border-color: rgba(42, 166, 255, 0.8);
+  box-shadow: 0 10px 28px rgba(42, 166, 255, 0.28);
+}
+
+.optionCardLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.optionCardLabel i {
+  font-size: 16px;
+  color: #2AA6FF;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.optionCardActive .optionCardLabel i {
+  opacity: 1;
+}
+
+/* ── Error ── */
+.error {
+  margin: 8px 0 20px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(244, 67, 54, 0.1);
+  color: #ff8a80;
+  border: 1px solid rgba(244, 67, 54, 0.25);
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+/* ── Submit button ── */
+.submitButton {
+  width: 100%;
+  border: none;
+  border-radius: 16px;
+  padding: 17px 24px;
+  background: linear-gradient(135deg, #1565C0 0%, #1976D2 60%, #2196F3 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: inherit;
+  box-shadow:
+    0 8px 24px rgba(21, 101, 192, 0.4),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.submitButton:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 32px rgba(21, 101, 192, 0.5),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.submitButton i {
+  font-size: 20px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.submitButton:hover:not(:disabled) i {
+  transform: translateX(4px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .wrapper { padding: 52px 16px 72px; }
+  .form { padding: 28px 20px; border-radius: 20px; }
+  .grid { grid-template-columns: 1fr; }
+  .optionGrid { grid-template-columns: repeat(2, 1fr); }
+  .title { font-size: 28px; }
+  .steps { gap: 0; }
+  .stepLine { width: 28px; }
+}
+
+@media (max-width: 480px) {
+  .optionGrid { grid-template-columns: 1fr; }
+}

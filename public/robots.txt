@@ -1,0 +1,6 @@
+# SmartDex - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://smartdex.ma/sitemap.xml

@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[redirects]]
+  from = "https://www.smartdex.ma/*"
+  to = "https://smartdex.ma/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://smartdex-next.netlify.app/*"
+  to = "https://smartdex.ma/:splat"
+  status = 301
+  force = true
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

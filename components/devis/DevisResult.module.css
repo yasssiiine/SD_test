@@ -1,0 +1,273 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .headerCard,
+  .metaCard,
+  .tableCard,
+  .totalsCard,
+  .notesCard {
+    background: #ffffff;
+    border: 1px solid rgba(10, 42, 74, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(10, 42, 74, 0.06);
+  }
+  
+  .headerCard {
+    padding: 28px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(0, 212, 255, 0.12);
+    color: #0a2a4a;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  
+  .title {
+    margin: 0;
+    font-size: 30px;
+    color: #0a2a4a;
+  }
+  
+  .subtitle {
+    margin: 10px 0 0;
+    color: #5f7183;
+    line-height: 1.7;
+  }
+  
+  .secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    padding: 14px 18px;
+    font-weight: 700;
+    cursor: pointer;
+    background: #ffffff;
+    color: #17324d;
+    border: 1px solid rgba(10, 42, 74, 0.12);
+  }
+  
+  .metaCard,
+  .totalsCard,
+  .notesCard {
+    padding: 24px;
+  }
+  
+  .metaGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+  
+  .metaGrid div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .metaGrid span {
+    font-size: 13px;
+    color: #6b7c8d;
+  }
+  
+  .metaGrid strong {
+    color: #17324d;
+    font-size: 15px;
+  }
+  
+  .descriptionBox,
+  .recommendationBox {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(10, 42, 74, 0.08);
+  }
+  
+  .descriptionBox span,
+  .recommendationBox span {
+    display: block;
+    font-size: 13px;
+    color: #6b7c8d;
+    margin-bottom: 8px;
+  }
+  
+  .descriptionBox p,
+  .recommendationBox p {
+    margin: 0;
+    color: #4f6172;
+    line-height: 1.8;
+    white-space: pre-wrap;
+  }
+  
+  .tableCard {
+    padding: 24px;
+    overflow-x: auto;
+  }
+  
+  .tableHeader,
+  .tableRow {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 2.2fr 0.9fr 0.9fr 0.9fr;
+    gap: 16px;
+    min-width: 1100px;
+    align-items: start;
+  }
+  
+  .tableHeader {
+    padding: 14px 16px;
+    background: #f6f9fc;
+    border-radius: 14px;
+    color: #0a2a4a;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  
+  .tableRow {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(10, 42, 74, 0.08);
+  }
+  
+  .tableRow:last-child {
+    border-bottom: none;
+  }
+  
+  .sectionCell {
+    font-weight: 700;
+    color: #0a2a4a;
+  }
+  
+  .itemCell {
+    font-weight: 600;
+    color: #17324d;
+  }
+  
+  .descriptionCell {
+    color: #607080;
+    line-height: 1.6;
+  }
+  
+  .priceCell {
+    font-weight: 700;
+    color: #0a2a4a;
+    white-space: nowrap;
+  }
+  
+  .typeBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  .typeIncluded {
+    background: rgba(16, 185, 129, 0.12);
+    color: #047857;
+  }
+  
+  .typeOptional {
+    background: rgba(245, 158, 11, 0.14);
+    color: #b45309;
+  }
+  
+  .typeRecurring {
+    background: rgba(59, 130, 246, 0.12);
+    color: #1d4ed8;
+  }
+  
+  .emptyState {
+    padding: 20px 0 0;
+    color: #607080;
+  }
+  
+  .totalsCard h3,
+  .notesCard h3 {
+    margin: 0 0 18px;
+    color: #0a2a4a;
+    font-size: 22px;
+  }
+  
+  .totalsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+  
+  .totalsGrid div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 18px;
+    border-radius: 16px;
+    background: #f8fbfd;
+    border: 1px solid rgba(10, 42, 74, 0.06);
+  }
+  
+  .totalsGrid span {
+    font-size: 13px;
+    color: #607080;
+  }
+  
+  .totalsGrid strong {
+    color: #0a2a4a;
+    font-size: 16px;
+  }
+  
+  .grandTotal {
+    background: linear-gradient(135deg, #0a2a4a 0%, #103e68 100%) !important;
+  }
+  
+  .grandTotal span,
+  .grandTotal strong {
+    color: #ffffff !important;
+  }
+  
+  .notesCard ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #516171;
+    line-height: 1.8;
+  }
+  
+  @media (max-width: 980px) {
+    .metaGrid,
+    .totalsGrid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  
+    .headerCard {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .metaGrid,
+    .totalsGrid {
+      grid-template-columns: 1fr;
+    }
+  
+    .headerCard,
+    .metaCard,
+    .tableCard,
+    .totalsCard,
+    .notesCard {
+      padding: 20px;
+    }
+  
+    .title {
+      font-size: 24px;
+    }
+  }

@@ -1,0 +1,4 @@
+# Canonical host redirects for SEO.
+# Next.js App Router routes are handled by @netlify/plugin-nextjs.
+https://www.smartdex.ma/* https://smartdex.ma/:splat 301!
+https://smartdex-next.netlify.app/* https://smartdex.ma/:splat 301!
