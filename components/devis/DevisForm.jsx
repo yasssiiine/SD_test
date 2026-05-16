@@ -661,7 +661,7 @@ export default function DevisForm() {
           </div>
 
           {/* ── Steps ── */}
-          <div className={styles.steps}>
+          {/* <div className={styles.steps}>
             <div className={`${styles.step} ${styles.stepActive}`}>
               <div className={styles.stepNum}>1</div>
               <span>Votre profil</span>
@@ -681,7 +681,7 @@ export default function DevisForm() {
               <div className={styles.stepNum}>4</div>
               <span>Estimation</span>
             </div>
-          </div>
+          </div> */}
 
           {!result && (
             <form className={styles.form} onSubmit={submitDevis}>
