@@ -210,7 +210,7 @@ export default async function ProjectDetailPage({ params }) {
       <section className="project-detail-page">
 
         {/* ── Hero Banner ── */}
-        <div className="project-banner" style={{ backgroundImage: getProjectBanner(p.type) }}>
+        <div className="project-banner">
           <div className="project-banner-particles" aria-hidden="true" />
           <div className="container">
             <div className="project-hero-content">

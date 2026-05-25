@@ -118,9 +118,13 @@
  /* ── Blog Page ── */
 .blog-page {
   background:
-    radial-gradient(ellipse at 20% 0%, rgba(42,166,255,0.1) 0%, transparent 40%),
-    radial-gradient(ellipse at 80% 80%, rgba(124,92,255,0.07) 0%, transparent 40%),
-    #060e1c;
+    linear-gradient(135deg, rgba(42, 166, 255, 0.08), transparent 48%, rgba(156, 39, 176, 0.06)),
+    linear-gradient(180deg,
+      rgba(11, 31, 58, 0) 0%,
+      rgba(11, 31, 58, 0.2) 30%,
+      rgba(11, 31, 58, 0.3) 50%,
+      rgba(11, 31, 58, 0.2) 70%,
+      rgba(11, 31, 58, 0) 100%);
   padding-bottom: 96px;
   min-height: 100vh;
 }
